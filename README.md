@@ -11,6 +11,10 @@ Repositório criado para fins de estudo de geração de componentes UI com React
  - [X] Instalar componente FORM do shadcn/ui
  - [X] Montar a página de login
 
+### Criar sistema de rotas
+ - [X] Instalar React-router-dom
+ - [X] Configurar sistema de rotas
+
 ### Criar Api e Sistema de autenticação e autorização
  - [ ] Configurar serviço de api
  - [ ] Middleware de autorização

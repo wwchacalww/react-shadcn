@@ -3,5 +3,15 @@ Repositório criado para fins de estudo de geração de componentes UI com React
 
 ### Inicio - Instalações ###
  - [X] React com Vite
- - [ ] Tailwind CSS
- - [ ] Shadcn/UI
+ - [X] Tailwind CSS
+ - [X] Shadcn/UI
+
+### Página do Login
+ - [X] Instalar ZOD, @hookform/resolvers e react-hook-form
+ - [X] Instalar componente FORM do shadcn/ui
+ - [X] Montar a página de login
+
+### Criar Api e Sistema de autenticação e autorização
+ - [ ] Configurar serviço de api
+ - [ ] Middleware de autorização
+ - [ ] Contexto de autenticação e autorização

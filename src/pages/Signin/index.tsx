@@ -6,8 +6,20 @@ import { useForm } from 'react-hook-form'
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useAuth } from '@/hook/Auth'
+import { jwtDecode } from 'jwt-decode'
+import { useNavigate } from 'react-router-dom'
+
+interface User {
+  name: string;
+  email: string;
+  avatar_url?: string;
+  role?: string;
+}
 
 export default function Signin() {
+  const { signIn } = useAuth()
+  const navigate = useNavigate();
   const formSchema = z.object({
     email: z.string().min(2).max(50),
     password: z.string().min(6).max(12),
@@ -20,10 +32,24 @@ export default function Signin() {
     },
   })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values)
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    const {email, password} = values
+    try {
+      await signIn({email, password})
+      const token = localStorage.getItem('@Hakuna:token')
+      if(token) {
+        const user = jwtDecode<User>(token)
+        if (user.role === "admin") {
+          navigate("/dashboard")
+        } else {
+          navigate("/")
+        }
+      }
+      form.reset()
+    } catch (err) {
+      form.reset()
+      return err
+    }
   }
 
   return (
@@ -43,7 +69,7 @@ export default function Signin() {
               <FormItem>
                 <FormLabel>E-mail</FormLabel>
                 <FormControl>
-                  <Input placeholder="digite seu email..." {...field} />
+                  <Input placeholder="digite seu email..." type='email' {...field} />
                 </FormControl>
                 <FormDescription>
                   Informe seu e-mail.
@@ -60,7 +86,7 @@ export default function Signin() {
               <FormItem>
                 <FormLabel>Senha</FormLabel>
                 <FormControl>
-                  <Input placeholder="digite sua senha..." {...field} />
+                  <Input placeholder="digite sua senha..." type='password' {...field} />
                 </FormControl>
                 <FormDescription>
                   Informe sua senha.

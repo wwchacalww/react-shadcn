@@ -16,6 +16,6 @@ Repositório criado para fins de estudo de geração de componentes UI com React
  - [X] Configurar sistema de rotas
 
 ### Criar Api e Sistema de autenticação e autorização
- - [ ] Configurar serviço de api
- - [ ] Middleware de autorização
- - [ ] Contexto de autenticação e autorização
+ - [X] Configurar serviço de api
+ - [X] Middleware de autorização
+ - [X] Contexto de autenticação e autorização

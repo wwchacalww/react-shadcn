@@ -19,3 +19,11 @@ Repositório criado para fins de estudo de geração de componentes UI com React
  - [X] Configurar serviço de api
  - [X] Middleware de autorização
  - [X] Contexto de autenticação e autorização
+
+### Criar Cabeçalho da aplicação
+ - [X] Cabeçalho com :
+   - [X] Logo
+   - [X] Menu de Usuário
+     - [X] Troca de Senha 
+       - [X] Criar Dialog com formulário de troca de senha
+     - [X] Sair

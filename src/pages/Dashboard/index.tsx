@@ -1,5 +1,10 @@
+import Header from "@/components/header";
+
 export default function Dashboard() {
   return (
-    <h1>Hakuna Matata - Dashboard</h1>
+    <div className='mx-auto'>
+      <Header />
+      
+    </div>
   )
 }

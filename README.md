@@ -27,3 +27,10 @@ Repositório criado para fins de estudo de geração de componentes UI com React
      - [X] Troca de Senha 
        - [X] Criar Dialog com formulário de troca de senha
      - [X] Sair
+
+### Dashboard
+ - [ ] List of Students
+   - [ ] Tabela
+   - [ ] Filtros
+   - [ ] Paginação
+   - [ ] Consulta de dados
